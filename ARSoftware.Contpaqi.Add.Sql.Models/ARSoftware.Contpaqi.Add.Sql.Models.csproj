@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>disable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Version>2.0.0</Version>
+	  <Company>AR Software</Company>
+	  <Description>Modelo de las bases de datos de CONTPAQi ADD version 8.0.0 de componentes</Description>
+	  <Copyright>Copyright © AR Software 2022</Copyright>
+	  <PackageProjectUrl>https://github.com/AndresRamos/ARSoftware.Contpaqi.Add</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/AndresRamos/ARSoftware.Contpaqi.Add</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageTags>Contpaqi Sql ADD</PackageTags>
+	  <PackageReleaseNotes>Se mapearon las bases de datos de la version 8.0.0 de CONTPAQi ADD</PackageReleaseNotes>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DbDirectory\" />
+    <Folder Include="DocumentMetadata\" />
+    <Folder Include="DocumentContent\" />
+    <Folder Include="Catalogos\" />
+    <Folder Include="OtherContent\" />
+    <Folder Include="OtherMetadata\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+  </ItemGroup>
+
+</Project>
