@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ARSoftware.Contpaqi.Add.Sql
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ARSoftware.Contpaqi.Add.Sql", "src\ARSoftware.Contpaqi.Add.Sql\ARSoftware.Contpaqi.Add.Sql.csproj", "{0ADBB3F9-51E0-49F0-B8AA-F73AF135F40C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sql.MigrationsStartupProject", "src\Sql.MigrationsStartupProject\Sql.MigrationsStartupProject.csproj", "{E81EC115-C961-4692-BB48-4C373A959DEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0ADBB3F9-51E0-49F0-B8AA-F73AF135F40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ADBB3F9-51E0-49F0-B8AA-F73AF135F40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ADBB3F9-51E0-49F0-B8AA-F73AF135F40C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81EC115-C961-4692-BB48-4C373A959DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81EC115-C961-4692-BB48-4C373A959DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81EC115-C961-4692-BB48-4C373A959DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81EC115-C961-4692-BB48-4C373A959DEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
