@@ -1,19 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ARSoftware.Contpaqi.Add.Sql.Models.DocumentMetadata
+namespace ARSoftware.Contpaqi.Add.Sql.Models.DocumentMetadata;
+
+public partial class Certificates
 {
-    public partial class Certificates
-    {
-        public Guid GuidDocument { get; set; }
-        public string? LlavePublica { get; set; }
-        public string? LlavePrivada { get; set; }
-        public string? NumeroSerie { get; set; }
-        public DateTime? FechaInicial { get; set; }
-        public DateTime? FechaFinal { get; set; }
-        public string? SubjectName { get; set; }
-        public string? IssuerName { get; set; }
-        public string? ActualCSDStatus { get; set; }
-        public bool? IsTesting { get; set; }
-    }
+    public Guid GuidDocument { get; set; }
+
+    public string? LlavePublica { get; set; }
+
+    public string? LlavePrivada { get; set; }
+
+    public string? NumeroSerie { get; set; }
+
+    public DateTime? FechaInicial { get; set; }
+
+    public DateTime? FechaFinal { get; set; }
+
+    public string? SubjectName { get; set; }
+
+    public string? IssuerName { get; set; }
+
+    public string? ActualCSDStatus { get; set; }
+
+    public bool? IsTesting { get; set; }
 }

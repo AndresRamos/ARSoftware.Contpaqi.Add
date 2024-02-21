@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ARSoftware.Contpaqi.Add.Sql.Models.DocumentMetadata
+namespace ARSoftware.Contpaqi.Add.Sql.Models.DocumentMetadata;
+
+public partial class EFOS_RFC
 {
-    public partial class EFOS_RFC
-    {
-        public string? RFC { get; set; }
-    }
+    public string? RFC { get; set; }
 }

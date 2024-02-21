@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ARSoftware.Contpaqi.Add.Sql.Models.DocumentMetadata
+namespace ARSoftware.Contpaqi.Add.Sql.Models.DocumentMetadata;
+
+public partial class TimbreTemp
 {
-    public partial class TimbreTemp
-    {
-        public Guid UUID { get; set; }
-        public Guid GuidDocument { get; set; }
-    }
+    public Guid UUID { get; set; }
+
+    public Guid GuidDocument { get; set; }
 }
