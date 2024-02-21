@@ -4,10 +4,10 @@
 	  <TargetFramework>net8.0</TargetFramework>
 	  <Nullable>enable</Nullable>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	  <Version>2.1.0</Version>
+	  <Version>2.2.0</Version>
 	  <Company>AR Software</Company>
-	  <Description>Modelo de las bases de datos de CONTPAQi ADD version 8.0.2 de componentes</Description>
-	  <Copyright>Copyright © AR Software 2022</Copyright>
+	  <Description>Modelo de las bases de datos de CONTPAQi ADD version 8.3.0 de componentes</Description>
+	  <Copyright>Copyright © AR Software 2024</Copyright>
 	  <PackageProjectUrl>https://github.com/AndresRamos/ARSoftware.Contpaqi.Add</PackageProjectUrl>
 	  <RepositoryUrl>https://github.com/AndresRamos/ARSoftware.Contpaqi.Add</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
