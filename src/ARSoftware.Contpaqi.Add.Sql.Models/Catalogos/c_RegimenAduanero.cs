@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ARSoftware.Contpaqi.Add.Sql.Models.Catalogos;
 
-public partial class c_Meses
+public partial class c_RegimenAduanero
 {
     public long IdElemento { get; set; }
 
