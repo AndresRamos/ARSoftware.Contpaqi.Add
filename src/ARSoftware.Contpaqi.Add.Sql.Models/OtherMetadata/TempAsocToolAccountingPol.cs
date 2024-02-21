@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ARSoftware.Contpaqi.Add.Sql.Models.OtherMetadata
+namespace ARSoftware.Contpaqi.Add.Sql.Models.OtherMetadata;
+
+public partial class TempAsocToolAccountingPol
 {
-    public partial class TempAsocToolAccountingPol
-    {
-        public string? GuidRef { get; set; }
-    }
+    public string? GuidRef { get; set; }
 }

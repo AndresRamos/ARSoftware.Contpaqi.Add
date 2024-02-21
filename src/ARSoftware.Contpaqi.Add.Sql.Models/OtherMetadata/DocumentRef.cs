@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ARSoftware.Contpaqi.Add.Sql.Models.OtherMetadata
+namespace ARSoftware.Contpaqi.Add.Sql.Models.OtherMetadata;
+
+public partial class DocumentRef
 {
-    public partial class DocumentRef
-    {
-        public Guid GuidDocument { get; set; }
-        public Guid? Guid { get; set; }
-        public string? AggregationType { get; set; }
-        public string? ApplicationType { get; set; }
-        public string? Comment { get; set; }
-    }
+    public Guid GuidDocument { get; set; }
+
+    public Guid? Guid { get; set; }
+
+    public string? AggregationType { get; set; }
+
+    public string? ApplicationType { get; set; }
+
+    public string? Comment { get; set; }
 }
