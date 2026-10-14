@@ -22,6 +22,8 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
 
     public virtual DbSet<c_CatCodMoneda> c_CatCodMoneda { get; set; }
 
+    public virtual DbSet<c_ClaveHYP> c_ClaveHYP { get; set; }
+
     public virtual DbSet<c_ClaveProdSTCC> c_ClaveProdSTCC { get; set; }
 
     public virtual DbSet<c_ClaveProdServ> c_ClaveProdServ { get; set; }
@@ -32,6 +34,8 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
 
     public virtual DbSet<c_ClaveUnidad> c_ClaveUnidad { get; set; }
 
+    public virtual DbSet<c_ClaveUnidadPeso> c_ClaveUnidadPeso { get; set; }
+
     public virtual DbSet<c_CodAgrup> c_CodAgrup { get; set; }
 
     public virtual DbSet<c_CodigoPostal> c_CodigoPostal { get; set; }
@@ -39,6 +43,8 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
     public virtual DbSet<c_CodigoTransporteAereo> c_CodigoTransporteAereo { get; set; }
 
     public virtual DbSet<c_ConceptoPago> c_ConceptoPago { get; set; }
+
+    public virtual DbSet<c_CondicionesEspeciales> c_CondicionesEspeciales { get; set; }
 
     public virtual DbSet<c_ConfigAutoTransporte> c_ConfigAutoTransporte { get; set; }
 
@@ -56,9 +62,15 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
 
     public virtual DbSet<c_DocumentoAduanero> c_DocumentoAduanero { get; set; }
 
+    public virtual DbSet<c_Estaciones> c_Estaciones { get; set; }
+
     public virtual DbSet<c_Estado> c_Estado { get; set; }
 
     public virtual DbSet<c_Exportacion> c_Exportacion { get; set; }
+
+    public virtual DbSet<c_FiguraTransporte> c_FiguraTransporte { get; set; }
+
+    public virtual DbSet<c_FormaFarmaceutica> c_FormaFarmaceutica { get; set; }
 
     public virtual DbSet<c_FormaPago> c_FormaPago { get; set; }
 
@@ -102,6 +114,10 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
 
     public virtual DbSet<c_RiesgoPuesto> c_RiesgoPuesto { get; set; }
 
+    public virtual DbSet<c_SectorCOFEPRIS> c_SectorCOFEPRIS { get; set; }
+
+    public virtual DbSet<c_SubProductoHYP> c_SubProductoHYP { get; set; }
+
     public virtual DbSet<c_SubTipoRem> c_SubTipoRem { get; set; }
 
     public virtual DbSet<c_TipoAportODep> c_TipoAportODep { get; set; }
@@ -130,6 +146,8 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
 
     public virtual DbSet<c_TipoJornada> c_TipoJornada { get; set; }
 
+    public virtual DbSet<c_TipoMateria> c_TipoMateria { get; set; }
+
     public virtual DbSet<c_TipoNomina> c_TipoNomina { get; set; }
 
     public virtual DbSet<c_TipoOtroPago> c_TipoOtroPago { get; set; }
@@ -137,6 +155,8 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
     public virtual DbSet<c_TipoPercepcion> c_TipoPercepcion { get; set; }
 
     public virtual DbSet<c_TipoPermiso> c_TipoPermiso { get; set; }
+
+    public virtual DbSet<c_TipoPermisoHYP> c_TipoPermisoHYP { get; set; }
 
     public virtual DbSet<c_TipoRelacion> c_TipoRelacion { get; set; }
 
@@ -268,6 +288,28 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<c_ClaveHYP>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_ClaveHYP");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_ClaveHYPP");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<c_ClaveProdSTCC>(entity =>
         {
             entity.HasNoKey();
@@ -382,6 +424,28 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<c_ClaveUnidadPeso>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_ClaveUnidadPeso");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_ClaveUnidadPeso");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<c_CodAgrup>(entity =>
         {
             entity.HasNoKey();
@@ -454,6 +518,28 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
             entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_ConceptoPago");
 
             entity.HasIndex(e => e.Codigo, "IX_c_ConceptoPago").IsClustered();
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<c_CondicionesEspeciales>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_CondicionesEspeciales");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_CondicionesEspeciales");
 
             entity.Property(e => e.Codigo)
                 .HasMaxLength(20)
@@ -647,6 +733,28 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<c_Estaciones>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_Estaciones");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_Estaciones");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<c_Estado>(entity =>
         {
             entity.HasNoKey();
@@ -678,6 +786,50 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
             entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_Exportacion");
 
             entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_Exportacion");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<c_FiguraTransporte>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_FiguraTransporte");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_FiguraTransporte");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<c_FormaFarmaceutica>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_FormaFarmaceutica");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_FormaFarmaceutica");
 
             entity.Property(e => e.Codigo)
                 .HasMaxLength(20)
@@ -1177,6 +1329,50 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<c_SectorCOFEPRIS>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_SectorCOFEPRIS");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_SectorCOFEPRIS");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<c_SubProductoHYP>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_SubProductoHYP");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_SubProductoHYP");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<c_SubTipoRem>(entity =>
         {
             entity.HasNoKey();
@@ -1501,6 +1697,28 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<c_TipoMateria>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_TipoMateria");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_TipoMateria");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<c_TipoNomina>(entity =>
         {
             entity.HasNoKey();
@@ -1580,6 +1798,28 @@ public partial class ContpaqiAddCatalogosDbContext : DbContext
             entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_TipoPermiso");
 
             entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_TipoPermiso");
+
+            entity.Property(e => e.Codigo)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.CodigoReporting)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.FinVigencia).HasColumnType("datetime");
+            entity.Property(e => e.IdElemento).ValueGeneratedOnAdd();
+            entity.Property(e => e.InicioVigencia).HasColumnType("datetime");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<c_TipoPermisoHYP>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.HasIndex(e => new { e.CodigoReporting, e.Valor }, "IXNCR_c_TipoPermisoHYP");
+
+            entity.HasIndex(e => new { e.Codigo, e.Valor }, "IXNC_c_TipoPermisoHYP");
 
             entity.Property(e => e.Codigo)
                 .HasMaxLength(20)

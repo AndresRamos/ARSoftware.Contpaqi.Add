@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.2.0</Version>
+    <Version>3.0.0</Version>
     <Company>AR Software</Company>
-    <Description>Entity Framework DbContexts para consultar las bases de datos de CONTPAQi ADD version 8.3.0 de componentes</Description>
-    <Copyright>Copyright © AR Software 2024</Copyright>
+    <Description>Entity Framework DbContexts para consultar las bases de datos de CONTPAQi ADD version 9.0.0 de componentes</Description>
+    <Copyright>Copyright © AR Software 2026</Copyright>
     <PackageProjectUrl>https://github.com/AndresRamos/ARSoftware.Contpaqi.Add</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AndresRamos/ARSoftware.Contpaqi.Add</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -27,7 +27,11 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
