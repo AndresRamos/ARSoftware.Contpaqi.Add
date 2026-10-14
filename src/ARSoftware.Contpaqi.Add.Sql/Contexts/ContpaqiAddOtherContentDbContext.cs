@@ -27,6 +27,7 @@ public partial class ContpaqiAddOtherContentDbContext : DbContext
             entity.HasIndex(e => e.GuidDocument, "IXFK_DocumentContent");
 
             entity.Property(e => e.GuidDocument).ValueGeneratedNever();
+            entity.Property(e => e.Content).IsUnicode(false);
             entity.Property(e => e.CreationDate).HasColumnType("datetime");
             entity.Property(e => e.DocumentDate).HasColumnType("datetime");
             entity.Property(e => e.DocumentType)
